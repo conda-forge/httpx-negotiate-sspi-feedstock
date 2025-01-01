@@ -6,28 +6,30 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/httpx_negotiate_sspi-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/httpx_negotiate_sspi-{{ version }}.tar.gz
   sha256: 34f5f778c132a1294badc541aeb950a48adf0a1e17001a3a42d4bd5093ecb6a6
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - poetry >=1.0
     - poetry-core
     - pip
   run:
     - __unix  # [unix]
     - __win  # [win]
-    - python >=3.8
+    - python >={{ python_min }}
     - pywin32 >=223  # [win]
     - httpx >0.16,<0.28
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - httpx_negotiate_sspi  # [win]
 
