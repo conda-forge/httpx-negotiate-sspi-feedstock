@@ -25,7 +25,7 @@ requirements:
     - __win  # [win]
     - python >={{ python_min }}
     - pywin32 >=223  # [win]
-    - httpx >0.16,<0.28
+    - httpx >0.16,<0.29
 
 test:
   requires:
