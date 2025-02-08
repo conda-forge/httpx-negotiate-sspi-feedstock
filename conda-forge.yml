@@ -2,6 +2,9 @@ noarch_platforms: win_64
 github:
   branch_name: main
   tooling_branch_name: main
+bot:
+  automerge: true
+  inspection: update-grayskull
 conda_build:
   error_overlinking: true
 conda_forge_output_validation: true
