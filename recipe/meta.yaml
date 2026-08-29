@@ -22,10 +22,7 @@ requirements:
     - pip
   run:
     - pywin32-on-windows >=223
-    - __unix  # [unix]
-    - __win  # [win]
     - python >={{ python_min }}
-    - pywin32 >=223  # [win]
     - httpx >0.16,<0.29
 
 test:
