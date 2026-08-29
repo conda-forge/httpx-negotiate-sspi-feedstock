@@ -21,9 +21,12 @@ requirements:
     - poetry-core
     - pip
   run:
-    - pywin32-on-windows >=223
+    - pywin32-on-windows
     - python >={{ python_min }}
+  run_constrained:
     - httpx >0.16,<0.29
+    - httpx2 >=2.0.0
+    - pywin32 >=223
 
 test:
   requires:
