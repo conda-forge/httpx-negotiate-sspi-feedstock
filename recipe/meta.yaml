@@ -1,13 +1,13 @@
 {% set name = "httpx-negotiate-sspi" %}
-{% set version = "0.28.2" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/httpx_negotiate_sspi-{{ version }}.tar.gz
-  sha256: d7bd8f0d8cb9922460cbac868dd087b65ed961711132b6ed3a9d9c61b115629a
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/httpx_negotiate_sspi-{{ version }}.tar.gz
+  sha256: 328e8d278cf7cc0ed34cbec823662464c0d8f89c247a4e35b9b720e5a1680ae0
 
 build:
   noarch: python
@@ -21,7 +21,7 @@ requirements:
     - poetry-core
     - pip
   run:
-    - pywin32-on-windows
+    - pywin32-on-windows >=223
     - python >={{ python_min }}
   run_constrained:
     - httpx >0.16,<0.29
